@@ -1,12 +1,12 @@
-### Project Report
+# Project Report
 
 ## Method
 The solution implements a [DDQN](https://en.wikipedia.org/wiki/Q-learning#Deep_Q-learning) agent using an MLP neural network model for approximating the two q-networks.
 
-# Model architecture:
+### Model architecture:
 The q-networks are each implemented as a Multi-Layer-Perceptron with 3 internal layers of sizes 32, 64 and 64 with RELU activations and an output layer of size 4 (the number of actions in the environment).
 ```
-$$$ agent.qnetwork_local.network
+>>> agent.qnetwork_local.network
 Sequential(
   (0): Linear(in_features=37, out_features=32, bias=True)
   (1): ReLU()
@@ -20,6 +20,7 @@ Sequential(
 
 The layers are initialized with [xavier_uniform](https://pytorch.org/docs/stable/nn.init.html#torch.nn.init.xavier_uniform_)
 
+### Agent parameters
 The parameters used in the agent are:
 ```
 BUFFER_SIZE = int(1e5)  # replay buffer size
@@ -29,7 +30,7 @@ TAU = 1e-3  # for soft update of target parameters
 LR = 5e-4  # learning rate
 UPDATE_EVERY = 4  # how often to update the network
 ```
-
+### DQN details
 The running of the DQN - interaction of agent in the environment while updating it's policy and the tracking of performance is all handled by the function `dqn` in the notebook. This is a modification of the function with the same name from (the Udacity DQN exercise notebook)
 https://github.com/udacity/deep-reinforcement-learning/blob/master/dqn/exercise/Deep_Q_Network.ipynb , adapted ro run the unity Bananas environment.
 
