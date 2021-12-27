@@ -1,7 +1,7 @@
 ### Project Report
 
 ## Method
-The solution implements a DDQN agent using an MLP neural network model for approximating the two q-networks.
+The solution implements a [DDQN](https://en.wikipedia.org/wiki/Q-learning#Deep_Q-learning) agent using an MLP neural network model for approximating the two q-networks.
 
 
 The q-networks are each implemented as a Multi-Layer-Perceptron with 3 internal layers of sizes 32, 64 and 64 with RELU activations and an output layer of size 4 (the number of actions in the environment).
@@ -18,7 +18,8 @@ LR = 5e-4  # learning rate
 UPDATE_EVERY = 4  # how often to update the network
 ```
 
-The running of the DQN - interaction of agent in the environment while updating it's policy and the tracking of performance is all handled by the function `dqn` in the notebook. This is a modification of the function with the same name from (the Udacity DQN exercise notebook)[https://github.com/udacity/deep-reinforcement-learning/blob/master/dqn/exercise/Deep_Q_Network.ipynb], adapted ro run the unity Bananas environment.
+The running of the DQN - interaction of agent in the environment while updating it's policy and the tracking of performance is all handled by the function `dqn` in the notebook. This is a modification of the function with the same name from (the Udacity DQN exercise notebook)
+https://github.com/udacity/deep-reinforcement-learning/blob/master/dqn/exercise/Deep_Q_Network.ipynb , adapted ro run the unity Bananas environment.
 
 The function implements epsilon-greedy action gelection with an exponentially decaying epsilon controlled by:
 ```

@@ -33,4 +33,4 @@ The task is episodic, and in order to solve the environment, your agent must get
 
 Run the code in `solution.ipynb` to train an agent. 
 
-Note: you can try switching device to "cuda:0" in `dqn_agent.py`. For me this caused issues with the uniti environment.
+Note: you can try switching device to "cuda:0" in `dqn_agent.py`. For me this caused issues with the unity environment.
