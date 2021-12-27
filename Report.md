@@ -3,8 +3,20 @@
 ## Method
 The solution implements a [DDQN](https://en.wikipedia.org/wiki/Q-learning#Deep_Q-learning) agent using an MLP neural network model for approximating the two q-networks.
 
-
+# Model architecture:
 The q-networks are each implemented as a Multi-Layer-Perceptron with 3 internal layers of sizes 32, 64 and 64 with RELU activations and an output layer of size 4 (the number of actions in the environment).
+```
+$$$ agent.qnetwork_local.network
+Sequential(
+  (0): Linear(in_features=37, out_features=32, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=32, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=64, bias=True)
+  (5): ReLU()
+  (6): Linear(in_features=64, out_features=4, bias=True)
+)
+```
 
 The layers are initialized with [xavier_uniform](https://pytorch.org/docs/stable/nn.init.html#torch.nn.init.xavier_uniform_)
 
